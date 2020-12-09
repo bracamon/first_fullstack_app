@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Find</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Find a Force Master</h1>
+        <hr />
+
+        <form id="findSubmit">
+            <div class="mb-2">
+                <label for="findInput">Enter a character to find</label>
+                <input type="text" id="findInput" class="form-control">
+            </div>
+            <button class="btn btn-primary">Find</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        const findSubmit = document.getElementById("findSubmit");
+        const findInput = document.getElementById("findInput");
+
+        findSubmit.addEventListener("submit", (e) => {
+            e.preventDefault();
+            console.log(findInput.value);
+
+            fetch(`/api/characters/find/${findInput.value}`)
+                .then((res) => res.json())
+                .then
+        });
+
+    </script>
+</body>
+</html>
